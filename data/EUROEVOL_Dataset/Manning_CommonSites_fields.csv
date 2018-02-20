@@ -1,0 +1,1 @@
+Field Heading,Field Type,Description,RelationshipsCountry,"ENUM ('0','1')",Modern country in which the site is located,Latitude,FLOAT,Decimal degrees,Longitude,FLOAT,Decimal degrees,SiteID,VARCHAR (100),Unique Site identification number,"CommonPhases.SiteID, C14Samples.SiteID"Sitename,VARCHAR (100),Sitename,
