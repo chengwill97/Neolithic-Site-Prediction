@@ -5,6 +5,7 @@ import time
 import urllib2
 import zipfile
 import webbrowser
+import csv
 
 class srtmDownloader(object):
     def downloadFileL1(self,target):
@@ -30,12 +31,12 @@ def downloadSRTM(filename):
 	# 	time.sleep(5)
 	# if '3' in filename:
 	# 	time.sleep(5)
-	_FOLDER = 'britain-srtm'
+	_FOLDER = 'britain-srtm-90m'
 	_PATH   = os.path.join(os.getcwd(), _FOLDER)
 
 	username = 'chengwill97'
 	password = 'VAp-6o2-JP2-Wz7'
-
+	i = 0
 	filepath = os.path.join(_PATH, filename)
 	file = open(filepath, 'r')
 	for temp_url in file.readlines():
@@ -49,12 +50,10 @@ def downloadSRTM(filename):
 				downloadname = url.split('/')[-1]
 				downloadname = os.path.join(_PATH, downloadname)
 
-				print ' [x] Unzipping %s' % url
 				# getunzipped(url, _PATH, downloadname[:-4])
-				
-
-				webbrowser.open(url)
-				print ' [x] Finished Unzipping %s' % downloadname[:-4]
+				i += 1
+				print '%02d %s' % (i, url.split('/')[-1])
+				# webbrowser.open(url)
 
 				# urllib.urlretrieve(url, downloadname[:-4])
 			except IOError:
@@ -65,9 +64,31 @@ def downloadSRTM(filename):
 # chengwill97
 # VAp-6o2-JP2-Wz7
 if __name__ == '__main__':
-	_FOLDER = 'britain-srtm'
+	_FOLDER = 'britain-srtm-30m'
 	_PATH = os.path.join(os.getcwd(), _FOLDER)
 	files = os.listdir(_PATH)
+	for file in files:
+		if '.csv' in file:
+			with open(os.path.join(_PATH,file), "rb") as f:
+			    reader = csv.reader(f, delimiter="\t")
+			    total_files_downloaded = 0
+			    for i, line in enumerate(reader):
 
-	for i in files:
-		downloadSRTM(i)
+			    	downloaded = False
+			    	for j in files:
+			    		# print ' [x] %s ||||| %s' % (j[:-3], line[0])
+			    		if '.hgt' in j and j[:-3] in line[0]:
+			    			print 'ALREADY DOWNLOADED '
+		    				downloaded = True
+		    				break
+
+			    	if downloaded == False:
+				        print 'line[%03d] = %s' % (i, line[0])
+				        total_files_downloaded += 1
+				        webbrowser.open(line[0])
+
+
+	print 'total files downloaded : %d' % total_files_downloaded
+
+	# for i in files:
+	# 	downloadSRTM(i)
