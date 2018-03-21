@@ -64,7 +64,7 @@ def downloadSRTM(filename):
 # chengwill97
 # VAp-6o2-JP2-Wz7
 if __name__ == '__main__':
-	_FOLDER = 'britain-srtm-30m'
+	_FOLDER = 'britain-srtm-90m'
 	_PATH = os.path.join(os.getcwd(), _FOLDER)
 	files = os.listdir(_PATH)
 	for file in files:
@@ -78,14 +78,14 @@ if __name__ == '__main__':
 			    	for j in files:
 			    		# print ' [x] %s ||||| %s' % (j[:-3], line[0])
 			    		if '.hgt' in j and j[:-3] in line[0]:
-			    			print 'ALREADY DOWNLOADED '
+			    			# print 'ALREADY DOWNLOADED '
 		    				downloaded = True
 		    				break
 
 			    	if downloaded == False:
-				        print 'line[%03d] = %s' % (i, line[0])
+				        print 'Need to download : line[%03d] = %s' % (i, line[0])
 				        total_files_downloaded += 1
-				        webbrowser.open(line[0])
+				        # webbrowser.open(line[0])
 
 
 	print 'total files downloaded : %d' % total_files_downloaded
