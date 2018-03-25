@@ -1,4 +1,0 @@
-1. get list of coordinates for 1x1 degree^2 block
-	distance between points = 150m
-2. put elevation into those coordinates
-3. calculate distance matrices
