@@ -1,9 +1,0 @@
-http://e4ftl01.cr.usgs.gov//MODV6_Dal_D/SRTM/SRTMGL3.003/2000.02.11/N48W006.SRTMGL3.hgt.zip
-http://e4ftl01.cr.usgs.gov//MODV6_Dal_D/SRTM/SRTMGL3.003/2000.02.11/N48E002.SRTMGL3.hgt.zip
-http://e4ftl01.cr.usgs.gov//MODV6_Dal_D/SRTM/SRTMGL3.003/2000.02.11/N48E001.SRTMGL3.hgt.zip
-http://e4ftl01.cr.usgs.gov//MODV6_Dal_D/SRTM/SRTMGL3.003/2000.02.11/N48E000.SRTMGL3.hgt.zip
-http://e4ftl01.cr.usgs.gov//MODV6_Dal_D/SRTM/SRTMGL3.003/2000.02.11/N48W004.SRTMGL3.hgt.zip
-http://e4ftl01.cr.usgs.gov//MODV6_Dal_D/SRTM/SRTMGL3.003/2000.02.11/N48W003.SRTMGL3.hgt.zip
-http://e4ftl01.cr.usgs.gov//MODV6_Dal_D/SRTM/SRTMGL3.003/2000.02.11/N48W001.SRTMGL3.hgt.zip
-http://e4ftl01.cr.usgs.gov//MODV6_Dal_D/SRTM/SRTMGL3.003/2000.02.11/N48W005.SRTMGL3.hgt.zip
-http://e4ftl01.cr.usgs.gov//MODV6_Dal_D/SRTM/SRTMGL3.003/2000.02.11/N48W002.SRTMGL3.hgt.zip
