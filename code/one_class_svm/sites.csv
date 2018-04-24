@@ -1,4 +1,4 @@
-Country,Latitude,Longitude,SiteID,SiteName,slope,Profile cu,ele30m,tangential,aspect,lake,river
+Country,Latitude,Longitude,SiteID,SiteName,slope,profile_curvature,ele30m,tangential,aspect,lake,river
 Great Britain,51.9691,-5.0823,S1010,Abermawr I,7.47827,-0.00108,11,-0.00141,233.23158,1.814888052,1.662733349
 Great Britain,51.68,-1.2613,S1011,Abingdon,0.78879,-0.00036,59,-0.00152,241.79982,4.349530906,0.290761311
 Great Britain,50.9969,-0.8798,S1040,adjacent to barrows excavated 1973-5,6.83334,0.00172,54,0.00173,344.33316,3.798896494,0.960162785
