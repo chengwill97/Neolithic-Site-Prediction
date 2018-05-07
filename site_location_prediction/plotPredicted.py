@@ -10,11 +10,16 @@ import matplotlib.pyplot as plt
 
 
 def plotPredictedFromDF(site_df, 
-						nonsite_df, 
-						model_name='prediction', 
-						country='Ireland',
-						resolution='c'):
+                        nonsite_df, 
+                        model_name='prediction', 
+                        country='Ireland',
+                        resolution='c',
+                        alpha_predicted=1.0,
+                        s_predicted=1,
+                        alpha_common=1.0,
+                        s_common=2):
     """Plot points of Ireland
+    
     Parameters
     -----------
         site_df : pandas.DataFrame
@@ -24,21 +29,21 @@ def plotPredictedFromDF(site_df,
             dataframe of the nonsites
 
         model_name : str, optional
-        	name of the model to use
+            name of the model to use
 
-		country : str, optional
-			name of the country to focus on
+        country : str, optional
+            name of the country to focus on
 
-		resolution : str, optional
-			resolution of boundary database to use. 
-			Can be c (crude), l (low), i (intermediate), 
-			h (high), f (full) or None. 
+        resolution : str, optional
+            resolution of boundary database to use. 
+            Can be c (crude), l (low), i (intermediate), 
+            h (high), f (full) or None. 
 
-			If None, no boundary data will be read in 
-			(and class methods such as drawcoastlines 
-			will raise an if invoked). Resolution drops 
-			off by roughly 80% between datasets. Higher 
-			res datasets are much slower to draw.
+            If None, no boundary data will be read in 
+            (and class methods such as drawcoastlines 
+            will raise an if invoked). Resolution drops 
+            off by roughly 80% between datasets. Higher 
+            res datasets are much slower to draw.
             
     Returns
     --------
@@ -90,7 +95,7 @@ def plotPredictedFromDF(site_df,
     lat = np.array(nonsites_df['latitude'].tolist())
     lon = np.array(nonsites_df['longitude'].tolist())
     x, y = predicted_sites(lon, lat)
-    predicted_sites.scatter(x, y, c='b', marker='o', s=1, alpha=.1)
+    predicted_sites.scatter(x, y, c='b', marker='o', s=s_predicted, alpha=alpha_predicted)
 
     # Plot common site points 
     common_sites = Basemap(projection=projection,
@@ -102,7 +107,7 @@ def plotPredictedFromDF(site_df,
     lat = np.array(country_df['latitude'].tolist())
     lon = np.array(country_df['longitude'].tolist())
     x, y = common_sites(lon, lat)
-    common_sites.scatter(x, y, c='r', marker='o', s=2, alpha=1.0)
+    common_sites.scatter(x, y, c='r', marker='o', s=s_common, alpha=alpha_common)
 
     # Plot labels
     title = '%s Site Prediction %s,\nRed=Discovered Sites\nBlue=Predicted Sites' % (country, model_name)
